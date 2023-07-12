@@ -27,6 +27,7 @@ db.Tasks.insertOne({
 db.createCollection("Projects")
 db.Projects.insertOne({
     "ProjectId":"1",
+    "ProjectName":"Mongoose",
     "Team Size":"2",
     "Budget":"$10,000",
     "Workload":"80",
