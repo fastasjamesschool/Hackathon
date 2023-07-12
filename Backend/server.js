@@ -7,11 +7,12 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.get('/', async(req, res) => {
-    res.send("Welcome!")
+app.get('/api', async(req, res) => {
+    testStr = await mongodb.test()
+    res.send(testStr)
   })
 
-app.get('/test', async(req, res) => {
+app.get('/api/test', async(req, res) => {
     testStr = await mongodb.test()
     res.send(testStr)
   })
