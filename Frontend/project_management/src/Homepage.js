@@ -6,10 +6,9 @@ export function Homepage() {
         const response = await fetch('/api');
         const homeData = await response.json();
         console.log(homeData)
-        setHomepage(homeData)
-        
+        setHomepage(homeData)  
     }
-
+    
     useEffect(() => {
         fetchHomepage()
     }, [])
