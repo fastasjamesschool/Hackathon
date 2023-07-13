@@ -45,7 +45,6 @@ async function findTask(taskId) {
     return tasks;
 }
 
-
 async function Users() {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
