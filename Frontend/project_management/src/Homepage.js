@@ -1,22 +1,32 @@
 import { useState, useEffect } from 'react';
 import React from "react"
+import { useParams, useNavigate } from "react-router-dom";
 
 export function Homepage() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    let navigate = useNavigate();
 
     async function submitInfo(event) {
         event.preventDefault()
+        let resResponse = 0
         const loginInfo = {"username": username, "password":password};
         const url = `/api/Auth`;
         const currentUserLoginInfo = await fetch(url, {
             method: "POST", headers: {
                 "Content-Type": "application/json"
             }, body: JSON.stringify(loginInfo)
-        }).then(res => res.json())
+        }).then(res => {resResponse = res.status})
         // Put it in the list. Update the page to show our new todo.
-        // setTodos([...todos, theNewTodo])
-        console.log(username, password)
+        // setTodos([...todos, theNewTodo])\
+        // console.log(resResponse)
+        if (resResponse === 200){
+            navigate('/Projects')
+        }
+        else{
+            console.log("incorrect info")
+        }
+        // console.log(username, password)
     }
 
 
