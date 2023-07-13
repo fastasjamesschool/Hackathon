@@ -2,10 +2,13 @@ const express = require('express')
 const app = express()
 const port = 4000
 const mongodb = require('./mongo-crud');
+const { log } = require('console');
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.use(express.json())
 
 app.get('/api', async(req, res) => {
     testStr = await mongodb.test()
@@ -22,7 +25,6 @@ app.get('/api/Projects/:id', async(req, res) => {
     res.send(project)
   })
 
-
 app.get('/api/Projects/:id/Tasks', async(req, res) => {
     tasks = await mongodb.findTasksForProject(req.params.id)
     res.send(tasks)
@@ -36,6 +38,11 @@ app.get('/api/Projects/:id/Tasks/:taskId', async(req, res) => {
 app.get('/api/Tasks', async(req, res) => {
     tasks = await mongodb.Tasks()
     res.send(tasks)
+  })
+
+app.post('/api/Auth',async(req, res) => {
+    loginInfo = req.body
+    console.log("hi " + JSON.stringify(loginInfo))
   })
 
 app.get('/api/Users', async(req, res) => {
