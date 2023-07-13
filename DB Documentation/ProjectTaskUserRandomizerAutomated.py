@@ -2,8 +2,30 @@ from faker import Faker
 import json
 import random
 import datetime
+from pymongo import MongoClient
+def get_database():
+ 
+   # Provide the mongodb atlas url to connect python to mongodb using pymongo
+   CONNECTION_STRING = "mongodb://localhost:27017"
+ 
+   # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
+   client = MongoClient(CONNECTION_STRING)
+ 
+   # Create the database for our example (we will use the same database throughout the tutorial
+   return client['CRUDLLC']
+  
+# This is added so that many files can reuse the function get_database()
+if __name__ == "__main__":   
+  
+   # Get the database
+   dbname = get_database()
 
-
+dropUser = dbname["Users"]
+dropProjects = dbname["Projects"]
+dropTasks = dbname["Tasks"]
+dropUser.drop()
+dropProjects.drop()
+dropTasks.drop()
 faker = Faker()
 users_file_name = "users.json"
 projects_file_name= "projects.json"
@@ -14,11 +36,16 @@ tasks = []
 number_of_projects = 1000
 number_of_users = 30
 number_of_tasks = 5000
+collection_users = dbname["Users"]
+collection_projects = dbname["Projects"]
+collection_tasks = dbname["Tasks"]
 
 def write(file_name,file_list):
     with open(file_name, 'w') as file:
         file.write(json.dumps(file_list, indent=2))
     print(file_name,"created")
+
+
     # Writes chosen list to the file specified 
 
 for i in range(number_of_users):
@@ -34,15 +61,16 @@ for i in range(number_of_users):
                 username = username+str(1) 
         user = {
             "Username": username,
-            "First Name": firstName,
-            "Last Name": lastName,
+            "FirstName": firstName,
+            "LastName": lastName,
             "Password": faker.password(),
-            "Manager Role": faker.boolean(30) #Designates a 30% chance that the worker is a manager
+            "ManagerRole": faker.boolean(30) #Designates a 30% chance that the worker is a manager
         }
         users.append(user)
+        collection_users.insert_one(user)
         #Adds the dictionary to the list
 
-write(users_file_name,users)
+#write(users_file_name,users)
 #Common function that takes the preferred file name and the list to be written to file
 for i in range(number_of_projects):
         #This randomly checks finds a user, then checks to see if they are already in the list
@@ -69,9 +97,10 @@ for i in range(number_of_projects):
             "CompletionTime":faker.random_int(10, 115),
         }
         projects.append(project)
+        collection_projects.insert_one(project)
         #Adds the dictionary to the list
 
-write(projects_file_name,projects)
+#write(projects_file_name,projects)
 #Common function that takes the preferred file name and the list to be written to file
 
 for i in range(number_of_tasks):
@@ -87,10 +116,11 @@ for i in range(number_of_tasks):
             'Description': faker.paragraph(nb_sentences=5),
             "AssignedUser": assignedUser,
             "ProjectId" : projectId,
-            "Due Date": faker.date_this_year().strftime("%Y-%m-%d"),
-            "Estimated Duration": faker.random_int(1,45)
+            "DueDate": faker.date_this_year().strftime("%Y-%m-%d"),
+            "EstimatedDuration": faker.random_int(1,45)
         }
         tasks.append(task)
+        collection_tasks.insert_one(task)
         #Adds the dictionary to the list
-write(tasks_file_name,tasks)
+#write(tasks_file_name,tasks)
 #Common function that takes the preferred file name and the list to be written to file
