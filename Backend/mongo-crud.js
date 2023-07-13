@@ -22,19 +22,29 @@ async function findProject(projectId) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
-    const project = await collection.find({ProjectId: +projectId}).toArray();
+    const project = await collection.find({ProjectId: Number(projectId)}).toArray();
     client.close();
     return project;
 }
 
-async function Tasks() {
+async function findTasksForProject(projectId) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(tasksCollection);
-    const tasks = await collection.find().toArray();
+    const tasks = await collection.find({ProjectId: Number(projectId)}).toArray();
     client.close();
     return tasks;
 }
+
+async function findTask(taskId) {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(tasksCollection);
+    const tasks = await collection.find({TaskId: Number(taskId)}).toArray();
+    client.close();
+    return tasks;
+}
+
 
 async function Users() {
     const client = await MongoClient.connect(url);
@@ -45,4 +55,4 @@ async function Users() {
     return users;
 }
 
-module.exports = {test, Projects,findProject, Tasks, Users}
+module.exports = {test, Projects,findProject, findTasksForProject,findTask, Users}
