@@ -40,9 +40,10 @@ collection_users = dbname["Users"]
 collection_projects = dbname["Projects"]
 collection_tasks = dbname["Tasks"]
 
+
 def write(file_name,file_list):
     with open(file_name, 'w') as file:
-        file.write(json.dumps(file_list, indent=2))
+        file.write(json.dumps(file_list, indent=2, default=str))
     print(file_name,"created")
 
 
@@ -70,7 +71,7 @@ for i in range(number_of_users):
         collection_users.insert_one(user)
         #Adds the dictionary to the list
 
-#write(users_file_name,users)
+write(users_file_name,users)
 #Common function that takes the preferred file name and the list to be written to file
 for i in range(number_of_projects):
         #This randomly checks finds a user, then checks to see if they are already in the list
@@ -100,7 +101,7 @@ for i in range(number_of_projects):
         collection_projects.insert_one(project)
         #Adds the dictionary to the list
 
-#write(projects_file_name,projects)
+write(projects_file_name,projects)
 #Common function that takes the preferred file name and the list to be written to file
 
 for i in range(number_of_tasks):
@@ -122,5 +123,5 @@ for i in range(number_of_tasks):
         tasks.append(task)
         collection_tasks.insert_one(task)
         #Adds the dictionary to the list
-#write(tasks_file_name,tasks)
+write(tasks_file_name,tasks)
 #Common function that takes the preferred file name and the list to be written to file
