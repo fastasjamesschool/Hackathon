@@ -1,0 +1,242 @@
+[
+  {
+    "Username": "KSampson",
+    "FirstName": "Kara",
+    "LastName": "Sampson",
+    "Password": "S$7Vy7m(!R",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed7c"
+  },
+  {
+    "Username": "BCarey",
+    "FirstName": "Blake",
+    "LastName": "Carey",
+    "Password": "poGQGDGs_8",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed7d"
+  },
+  {
+    "Username": "KRobinson",
+    "FirstName": "Keith",
+    "LastName": "Robinson",
+    "Password": "!W9k1oAlqJ",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed7e"
+  },
+  {
+    "Username": "TMitchell",
+    "FirstName": "Timothy",
+    "LastName": "Mitchell",
+    "Password": "B@13U%AeJm",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed7f"
+  },
+  {
+    "Username": "MRoss",
+    "FirstName": "Mary",
+    "LastName": "Ross",
+    "Password": "z3^mVQQm^e",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed80"
+  },
+  {
+    "Username": "JCarey",
+    "FirstName": "John",
+    "LastName": "Carey",
+    "Password": "@6NUGDFejx",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed81"
+  },
+  {
+    "Username": "JBaker",
+    "FirstName": "James",
+    "LastName": "Baker",
+    "Password": "upd&KIN4^6",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed82"
+  },
+  {
+    "Username": "ARay",
+    "FirstName": "Adam",
+    "LastName": "Ray",
+    "Password": "@b7SdE%s^@",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed83"
+  },
+  {
+    "Username": "MThompson",
+    "FirstName": "Margaret",
+    "LastName": "Thompson",
+    "Password": "$h%PpQBJ^6",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed84"
+  },
+  {
+    "Username": "AOrtiz",
+    "FirstName": "Andrew",
+    "LastName": "Ortiz",
+    "Password": "r#5L&FhBdt",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed85"
+  },
+  {
+    "Username": "DCaldwell",
+    "FirstName": "Derek",
+    "LastName": "Caldwell",
+    "Password": "*V6SEmdx)t",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed86"
+  },
+  {
+    "Username": "CKing",
+    "FirstName": "Christopher",
+    "LastName": "King",
+    "Password": "na6nLR*ts&",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed87"
+  },
+  {
+    "Username": "AStuart",
+    "FirstName": "Aaron",
+    "LastName": "Stuart",
+    "Password": "QJ!0^QSdbF",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed88"
+  },
+  {
+    "Username": "DMclaughlin",
+    "FirstName": "Daniel",
+    "LastName": "Mclaughlin",
+    "Password": "(QV6dbz%8s",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed89"
+  },
+  {
+    "Username": "BFlores",
+    "FirstName": "Bonnie",
+    "LastName": "Flores",
+    "Password": "E7Y4V*ga^H",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed8a"
+  },
+  {
+    "Username": "AMorrison",
+    "FirstName": "Alison",
+    "LastName": "Morrison",
+    "Password": "i432oEHiO*",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed8b"
+  },
+  {
+    "Username": "BRivera",
+    "FirstName": "Brian",
+    "LastName": "Rivera",
+    "Password": "MVyy2Ub^o^",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed8c"
+  },
+  {
+    "Username": "JLewis",
+    "FirstName": "Jamie",
+    "LastName": "Lewis",
+    "Password": "6d9Kzqn(!)",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed8d"
+  },
+  {
+    "Username": "KChristensen",
+    "FirstName": "Kelly",
+    "LastName": "Christensen",
+    "Password": "_A$KQ6WNo7",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed8e"
+  },
+  {
+    "Username": "MGomez",
+    "FirstName": "Martha",
+    "LastName": "Gomez",
+    "Password": "Iq#ICRbp@2",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed8f"
+  },
+  {
+    "Username": "MWilliams",
+    "FirstName": "Melissa",
+    "LastName": "Williams",
+    "Password": "T&8T4ZeuX)",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed90"
+  },
+  {
+    "Username": "LMedina",
+    "FirstName": "Luis",
+    "LastName": "Medina",
+    "Password": "x$7*sNxJI_",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed91"
+  },
+  {
+    "Username": "KColon",
+    "FirstName": "Kelly",
+    "LastName": "Colon",
+    "Password": "@0RpHP7U3D",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed92"
+  },
+  {
+    "Username": "MMoran",
+    "FirstName": "Mackenzie",
+    "LastName": "Moran",
+    "Password": "Q@Q36mHd!1",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed93"
+  },
+  {
+    "Username": "KBerger",
+    "FirstName": "Kimberly",
+    "LastName": "Berger",
+    "Password": "FgLo^Mwc#2",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed94"
+  },
+  {
+    "Username": "CHaynes",
+    "FirstName": "Christopher",
+    "LastName": "Haynes",
+    "Password": "G$6P3SprhZ",
+    "ManagerRole": true,
+    "_id": "64b05d8c7a39f4484979ed95"
+  },
+  {
+    "Username": "PMatthews",
+    "FirstName": "Phillip",
+    "LastName": "Matthews",
+    "Password": "oo4)8gWqC&",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed96"
+  },
+  {
+    "Username": "GParker",
+    "FirstName": "Gloria",
+    "LastName": "Parker",
+    "Password": "(A!pLQze%8",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed97"
+  },
+  {
+    "Username": "LBeck",
+    "FirstName": "Lisa",
+    "LastName": "Beck",
+    "Password": "@Z9OXTneD3",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed98"
+  },
+  {
+    "Username": "EClark",
+    "FirstName": "Emily",
+    "LastName": "Clark",
+    "Password": "eA1K5b2q_2",
+    "ManagerRole": false,
+    "_id": "64b05d8c7a39f4484979ed99"
+  }
+]
