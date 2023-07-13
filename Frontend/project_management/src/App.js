@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 import { Homepage } from './Homepage';
 import { Projects } from './Projects'
@@ -16,7 +17,7 @@ function App() {
             <Route path="/Projects/:id" element={<Project/>} />
             <Route path="/Projects/:id/Tasks" element={<Tasks/>} />
             <Route path="/Projects/:id/Tasks/:taskId" element={<Task/>} />
-            {/* <Route path="/character/:id" element={<Character/>} /> */}
+            
         </Routes>
         </>
         )
