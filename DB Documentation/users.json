@@ -1,0 +1,212 @@
+[
+  {
+    "Username": "JFlores",
+    "First Name": "James",
+    "Last Name": "Flores",
+    "Password": "(1XXQVw#Ok",
+    "Manager Role": false
+  },
+  {
+    "Username": "KSmith",
+    "First Name": "Krystal",
+    "Last Name": "Smith",
+    "Password": "&y6NAaf0cH",
+    "Manager Role": true
+  },
+  {
+    "Username": "SKlein",
+    "First Name": "Sarah",
+    "Last Name": "Klein",
+    "Password": "&FMNarx0j2",
+    "Manager Role": true
+  },
+  {
+    "Username": "KNavarro",
+    "First Name": "Kenneth",
+    "Last Name": "Navarro",
+    "Password": "((7XTkf_Sb",
+    "Manager Role": false
+  },
+  {
+    "Username": "RNewton",
+    "First Name": "Roger",
+    "Last Name": "Newton",
+    "Password": "C1wJxLrm^v",
+    "Manager Role": false
+  },
+  {
+    "Username": "MWood",
+    "First Name": "Matthew",
+    "Last Name": "Wood",
+    "Password": "xK9HCw0oU@",
+    "Manager Role": false
+  },
+  {
+    "Username": "LGilmore",
+    "First Name": "Lisa",
+    "Last Name": "Gilmore",
+    "Password": "n4!a(9WuJB",
+    "Manager Role": true
+  },
+  {
+    "Username": "KNichols",
+    "First Name": "Katelyn",
+    "Last Name": "Nichols",
+    "Password": "&Za2Qi_O*a",
+    "Manager Role": false
+  },
+  {
+    "Username": "CArnold",
+    "First Name": "Christopher",
+    "Last Name": "Arnold",
+    "Password": "08PbV9Ve(S",
+    "Manager Role": false
+  },
+  {
+    "Username": "TMoran",
+    "First Name": "Taylor",
+    "Last Name": "Moran",
+    "Password": "&05dGm!#a(",
+    "Manager Role": false
+  },
+  {
+    "Username": "JPrice",
+    "First Name": "Joseph",
+    "Last Name": "Price",
+    "Password": "B&Z8VHHm%2",
+    "Manager Role": false
+  },
+  {
+    "Username": "CRamirez",
+    "First Name": "Connor",
+    "Last Name": "Ramirez",
+    "Password": "%PwkB9Tro2",
+    "Manager Role": false
+  },
+  {
+    "Username": "CLawson",
+    "First Name": "Christopher",
+    "Last Name": "Lawson",
+    "Password": "_!5%Q$kulX",
+    "Manager Role": true
+  },
+  {
+    "Username": "RStokes",
+    "First Name": "Renee",
+    "Last Name": "Stokes",
+    "Password": "wu8gSsCY#6",
+    "Manager Role": true
+  },
+  {
+    "Username": "HTucker",
+    "First Name": "Helen",
+    "Last Name": "Tucker",
+    "Password": "F!8&XKm09D",
+    "Manager Role": true
+  },
+  {
+    "Username": "LVargas",
+    "First Name": "Leslie",
+    "Last Name": "Vargas",
+    "Password": "3%q4yDJy*v",
+    "Manager Role": false
+  },
+  {
+    "Username": "AHines",
+    "First Name": "Ashley",
+    "Last Name": "Hines",
+    "Password": "j#43VK0t+9",
+    "Manager Role": false
+  },
+  {
+    "Username": "EGlover",
+    "First Name": "Eric",
+    "Last Name": "Glover",
+    "Password": "^3FGJIcSCf",
+    "Manager Role": true
+  },
+  {
+    "Username": "CWells",
+    "First Name": "Cathy",
+    "Last Name": "Wells",
+    "Password": "q88yI9Sc_O",
+    "Manager Role": true
+  },
+  {
+    "Username": "DMcmillan",
+    "First Name": "Donald",
+    "Last Name": "Mcmillan",
+    "Password": "ufcXGt%B+9",
+    "Manager Role": true
+  },
+  {
+    "Username": "MRogers",
+    "First Name": "Martin",
+    "Last Name": "Rogers",
+    "Password": "4xe!ZD68*c",
+    "Manager Role": false
+  },
+  {
+    "Username": "PRodriguez",
+    "First Name": "Patrick",
+    "Last Name": "Rodriguez",
+    "Password": "$q19Fyy5s8",
+    "Manager Role": false
+  },
+  {
+    "Username": "PPeters",
+    "First Name": "Phillip",
+    "Last Name": "Peters",
+    "Password": "$^9NZHXndm",
+    "Manager Role": true
+  },
+  {
+    "Username": "DPhillips",
+    "First Name": "Denise",
+    "Last Name": "Phillips",
+    "Password": "T!2LaCxzVb",
+    "Manager Role": false
+  },
+  {
+    "Username": "CPrice",
+    "First Name": "Courtney",
+    "Last Name": "Price",
+    "Password": "Q_N33V%WLh",
+    "Manager Role": false
+  },
+  {
+    "Username": "ASimmons",
+    "First Name": "Angelica",
+    "Last Name": "Simmons",
+    "Password": "5)0AOOREhn",
+    "Manager Role": true
+  },
+  {
+    "Username": "EMurray",
+    "First Name": "Elizabeth",
+    "Last Name": "Murray",
+    "Password": "Ko+75Svr)S",
+    "Manager Role": false
+  },
+  {
+    "Username": "JGriffin",
+    "First Name": "James",
+    "Last Name": "Griffin",
+    "Password": "+Fe2ZMsDqd",
+    "Manager Role": false
+  },
+  {
+    "Username": "PCortez",
+    "First Name": "Patrick",
+    "Last Name": "Cortez",
+    "Password": "++qQA3Gaj1",
+    "Manager Role": true
+  },
+  {
+    "Username": "PAlvarez",
+    "First Name": "Phillip",
+    "Last Name": "Alvarez",
+    "Password": "&i7RDg2wr%",
+    "Manager Role": false
+  }
+]
