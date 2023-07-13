@@ -13,7 +13,7 @@ projects = []
 tasks = []
 number_of_projects = 1000
 number_of_users = 30
-number_of_tasks = 4000
+number_of_tasks = 5000
 
 for i in range(number_of_users):
         firstName = faker.first_name()
@@ -30,15 +30,23 @@ for i in range(number_of_users):
             "Manager Role": faker.boolean(30) #Designates a 30% chance that the worker is a manager
         }
         users.append(user)
-print(users)
 
 with open(users_file_name, 'w') as file:
     file.write(json.dumps(users, indent=2))
 
 for i in range(number_of_projects):
         assignedUsers=[]
-        for user in range(0,faker.random_int(1,3)):
-            assignedUsers.append(users[faker.random_int(0,number_of_users-1)]["Username"])
+        ranInt = faker.random_int(1,3)
+        for user in range(0,ranInt):
+            projectUser=(users[faker.random_int(0,number_of_users-1)]["Username"])
+            if len(assignedUsers) == 0:
+                 assignedUsers.append(projectUser)
+            else:
+                for user in range(0,len(assignedUsers)):
+                    if projectUser in assignedUsers:
+                        ranInt+=1
+                    else:
+                        assignedUsers.append(projectUser)
         project = {
             "ProjectId":i,
             "ProjectName":' '.join(faker.words(2)).capitalize(),
@@ -55,9 +63,9 @@ with open(projects_file_name, 'w') as file:
 
 for i in range(number_of_tasks):
         assignedProject = (projects[faker.random_int(0,number_of_projects-1)])
-        assignedUser=(assignedProject["AssignedUsers"])
+        assignedUsers=(assignedProject["AssignedUsers"])
         projectId = assignedProject["ProjectId"]
-        assignedUser=(assignedUser[faker.random_int(0,len(assignedUser)-1)])
+        assignedUser=(assignedUsers[faker.random_int(0,len(assignedUsers)-1)])
         task = {
             "TaskId":i,
             "TaskName":' '.join(faker.words(2)).capitalize(),
