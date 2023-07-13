@@ -17,6 +17,11 @@ app.get('/api/Projects', async(req, res) => {
     res.send(projects)
   })
 
+app.get('/api/Projects/:id', async(req, res) => {
+    project = await mongodb.findProject(req.params.id)
+    res.send(project)
+  })
+
 app.get('/api/Tasks', async(req, res) => {
     tasks = await mongodb.Tasks()
     res.send(tasks)

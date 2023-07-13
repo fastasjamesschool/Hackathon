@@ -18,6 +18,15 @@ async function Projects() {
     return projects;
 }
 
+async function findProject(projectId) {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(projectsCollection);
+    const project = await collection.find({ProjectId: +projectId}).toArray();
+    client.close();
+    return project;
+}
+
 async function Tasks() {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
@@ -36,4 +45,4 @@ async function Users() {
     return users;
 }
 
-module.exports = {test, Projects, Tasks, Users}
+module.exports = {test, Projects,findProject, Tasks, Users}
