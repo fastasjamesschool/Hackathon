@@ -42,7 +42,15 @@ app.get('/api/Tasks', async(req, res) => {
 
 app.post('/api/Auth',async(req, res) => {
     loginInfo = req.body
-    console.log("hi " + JSON.stringify(loginInfo))
+    user = await mongodb.userInDb(loginInfo.username)
+    console.log(user)
+    if (user.length != 0){
+        res.status(200).send()
+    } 
+    else{
+        res.status(404).send()
+    }
+    // console.log("hi " + JSON.stringify(loginInfo))
   })
 
 app.get('/api/Users', async(req, res) => {

@@ -8,7 +8,7 @@ export function Project() {
     async function fetchProject() {
         const response = await fetch(`/api/Projects/${params.id}`);
         const responseJson = await response.json();
-        console.log(responseJson)
+        // console.log(responseJson)
         setProject(responseJson)  
     }
     
