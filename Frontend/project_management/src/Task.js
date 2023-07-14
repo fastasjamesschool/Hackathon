@@ -73,10 +73,10 @@ export function Task() {
         ],
         rows: task
     }
-    async function sendNewTask(taskName, description,assignedUser,dueDate,estimatedDuration, event) {
+    async function sendNewTask(projectId, taskId, taskName, description,assignedUser,dueDate,estimatedDuration, event) {
         event.preventDefault()
         // Make API call to send data to server as a POST
-        const newTask = { taskName, description,assignedUser,dueDate,estimatedDuration };
+        const newTask = { projectId, taskId, taskName, description,assignedUser,dueDate,estimatedDuration };
         const url = `/api/:username/Projects/:id/Tasks/:taskId`;
         const theNewTask = await fetch(url, {
           method: "POST", headers: {
@@ -91,7 +91,7 @@ export function Task() {
 
     return (
         <>
-        <CreateTask sendNewTask={sendNewTask}/>
+        <CreateTask sendNewTask={sendNewTask} projectId = {params.id} taskId = {params.taskId}/>
         <MDBDataTable
       striped
       bordered

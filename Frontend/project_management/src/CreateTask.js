@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const CreateTask = ({ sendNewTask }) => {
+export const CreateTask = ({ sendNewTask , projectId, taskId }) => {
   const [taskName, setTaskName] = useState("")
   const [description, setDescription] = useState("")
   const [assignedUser, setAssignedUser] = useState("")
@@ -45,7 +45,7 @@ export const CreateTask = ({ sendNewTask }) => {
             onChange={e => setEstimatedDuration(e.target.value)} name="estimatedDuration" style={styles.input} />
         </div>
         <div className="formField">
-          <button onClick={event => sendNewTask(taskName, description,assignedUser,dueDate,estimatedDuration, event)} type="submit">Create to new task</button>
+          <button onClick={event => sendNewTask(projectId, taskId, taskName, description,assignedUser,dueDate,estimatedDuration, event)} type="submit">Create to new task</button>
         </div>
       </form>
     </section>

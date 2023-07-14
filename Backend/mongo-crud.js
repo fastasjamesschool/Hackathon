@@ -58,10 +58,16 @@ async function userInDb(username) {
 async function insertTask(task) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
-    const collection = db.collection(usersCollection);
-    const user = await collection.find({Username: username}).toArray();
+    const collection = db.collection(tasksCollection);
+    const task = await collection.insertOne({TaskId: Number(task.taskId)},
+                                            {TaskName: task.taskName},
+                                            {Description: task.description},
+                                            {AssignedUser: task.assingedUser},
+                                            {ProjectId: Number(task.projectId)},
+                                            {'Due Date': task.dueDate},
+                                            {'Estimated Duration': Number(task.estimatedDuration)}).toArray();
     client.close();
-    return user;
+    return task;
 }
 
 async function Users() {
