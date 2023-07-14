@@ -15,8 +15,9 @@ app.get('/api', async(req, res) => {
     res.send(testStr)
   })
 
-app.get('/api/Projects', async(req, res) => {
-    projects = await mongodb.Projects()
+app.get('/api/:username', async(req, res) => {
+    projects = await mongodb.Projects(req.params.username)
+    // console.log({projects})
     res.send(projects)
   })
 
@@ -43,7 +44,7 @@ app.get('/api/Tasks', async(req, res) => {
 app.post('/api/Auth',async(req, res) => {
     loginInfo = req.body
     user = await mongodb.userInDb(loginInfo.username)
-    console.log(user)
+    //console.log(user)
     if (user.length != 0){
         res.status(200).send()
     } 

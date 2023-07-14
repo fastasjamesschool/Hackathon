@@ -9,11 +9,12 @@ async function test() {
     return {"name":"John"}
 }
 
-async function Projects() {
+async function Projects(username) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
-    const projects = await collection.find().toArray();
+    const projects = await collection.find({AssignedUsers: username}).toArray();
+    console.log({username})
     client.close();
     return projects;
 }
