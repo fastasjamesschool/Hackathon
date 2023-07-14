@@ -16,7 +16,6 @@ export function Project() {
     useEffect(() => {
         fetchProject()
     }, [])
-    // console.log({ project })
 
     return (
         <>
