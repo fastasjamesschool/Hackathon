@@ -21,7 +21,7 @@ export function Homepage() {
         // setTodos([...todos, theNewTodo])\
         // console.log(resResponse)
         if (resResponse === 200){
-            navigate('/Projects')
+            navigate(`/${username}`)
         }
         else{
             console.log("incorrect info")
