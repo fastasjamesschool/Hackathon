@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { MDBDataTable } from 'mdbreact';
+// import { CreateTask } from './CreateTask'
 
 export function Task() {
     const [task, setTask] = useState([])
@@ -74,9 +75,6 @@ export function Task() {
     }
 
     return (
-        // <>
-        // <h1>{JSON.stringify(projects)}</h1>
-        // </> 
         <MDBDataTable
       striped
       bordered

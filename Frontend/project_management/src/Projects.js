@@ -26,6 +26,7 @@ export function Projects() {
         //console.log(projects[i])
         projects[i]["clickEvent"] = (projects) => handleProjectClick(projects.ProjectId)
         //console.log(projects[i])
+        projects[i]["AssignedUsers"] = projects[i]["AssignedUsers"].join(', ')
     }
 
     function handleProjectClick(projectId){

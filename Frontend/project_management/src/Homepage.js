@@ -17,9 +17,6 @@ export function Homepage() {
                 "Content-Type": "application/json"
             }, body: JSON.stringify(loginInfo)
         }).then(res => {resResponse = res.status})
-        // Put it in the list. Update the page to show our new todo.
-        // setTodos([...todos, theNewTodo])\
-        // console.log(resResponse)
         if (resResponse === 200){
             navigate(`/${username}`)
         }
