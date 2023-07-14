@@ -19,11 +19,11 @@ async function Projects(username) {
     return projects;
 }
 
-async function findProject(projectId) {
+async function findProject(username, projectId) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
-    const project = await collection.find({ProjectId: Number(projectId)}).toArray();
+    const project = await collection.find({"$and":[{AssignedUsers: username}, {ProjectId: Number(projectId)}]}).toArray();
     client.close();
     return project;
 }
