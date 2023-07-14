@@ -64,7 +64,6 @@ async function insertTask(task) {
     return user;
 }
 
-
 async function Users() {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
