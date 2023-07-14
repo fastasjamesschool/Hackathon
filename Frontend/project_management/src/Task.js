@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { MDBDataTable } from 'mdbreact';
-// import { CreateTask } from './CreateTask'
+import { CreateTask } from './CreateTask'
 
 export function Task() {
     const [task, setTask] = useState([])
@@ -73,8 +73,25 @@ export function Task() {
         ],
         rows: task
     }
+    async function sendNewTask(taskName, description,assignedUser,dueDate,estimatedDuration, event) {
+        event.preventDefault()
+        // Make API call to send data to server as a POST
+        const newTask = { taskName, description,assignedUser,dueDate,estimatedDuration };
+        const url = `/api/:username/Projects/:id/Tasks/:taskId`;
+        const theNewTask = await fetch(url, {
+          method: "POST", headers: {
+            "Content-Type": "application/json"
+          }, body: JSON.stringify(newTask)
+        }).then(res => res.json())
+        
+        // Put it in the list. Update the page to show our new todo.
+        // setTodos([...todos, theNewTask])
+      }
+    
 
     return (
+        <>
+        <CreateTask sendNewTask={sendNewTask}/>
         <MDBDataTable
       striped
       bordered
@@ -82,6 +99,7 @@ export function Task() {
       noBottomColumns={true}
       data={data}
     />
+    </>
     )
 
 }

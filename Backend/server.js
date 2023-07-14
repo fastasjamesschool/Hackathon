@@ -23,7 +23,7 @@ app.get('/api/:username', async(req, res) => {
 
 app.get('/api/:username/Projects/:id', async(req, res) => {
     project = await mongodb.findProject(req.params.username, req.params.id)
-    console.log(req.params.username, req.params.id)
+    //console.log(req.params.username, req.params.id)
     res.send(project)
   })
 
@@ -35,6 +35,13 @@ app.get('/api/:username/Projects/:id/Tasks', async(req, res) => {
 app.get('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
     task = await mongodb.findTask(req.params.taskId)
     res.send(task)
+  })
+
+app.post('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
+    task = req.body
+    console.log(task)
+    // task = await mongodb.findTask(req.params.taskId)
+    // res.send(task)
   })
   
 // app.get('/api/Tasks', async(req, res) => {
