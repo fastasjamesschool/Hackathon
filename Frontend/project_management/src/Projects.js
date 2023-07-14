@@ -89,31 +89,10 @@ export function Projects() {
       striped
       bordered
       small
+      noBottomColumns={true}
       data={data}
     />
     )
-    // return (
-    //     // <>
-    //     // <h1>{JSON.stringify(projects)}</h1>
-    //     // </> 
-    //     <>
-    //     <h1>Stuff I gotta do today</h1>
-    //     {/* <CreateTodo sendNewTodo={sendNewTodo} /> */}
-    //     <ul >
-    //       {projects ?
-    //       projects.map((project) => (
-    //         <li
-    //                 className="project"
-    //                 key={project.ProjectId}
-    //                 onClick={() => handleProjectClick(project.ProjectId)}
-    //               >
-    //                 <a>{project.ProjectId}</a>
-    //                 <a>{project.AssignedUsers}</a>
-    //               </li>
-    //       ))
-    //     :""}
-    //     </ul>
-    //     </>
-    // )
+
 
 }
