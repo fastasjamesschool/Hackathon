@@ -40,6 +40,13 @@ app.get('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
 app.post('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
     task = req.body
     console.log(task)
+    taskSubmited = await mongodb.insertTask(task)
+    if (taskSubmited){
+        res.status(200).send()
+    } 
+    else{
+        res.status(404).send()
+    }
     // task = await mongodb.findTask(req.params.taskId)
     // res.send(task)
   })
