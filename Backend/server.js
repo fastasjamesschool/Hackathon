@@ -15,6 +15,12 @@ app.get('/api', async(req, res) => {
     res.send(testStr)
   })
 
+app.get('/api/Tasks', async(req, res) => {
+    tasks = await mongodb.Tasks()
+    //console.log("hi")
+    res.send(tasks)
+  })
+
 app.get('/api/:username', async(req, res) => {
     projects = await mongodb.Projects(req.params.username)
     // console.log({projects})
@@ -39,7 +45,7 @@ app.get('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
 
 app.post('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
     task = req.body
-    console.log(task)
+    // console.log(task)
     taskSubmited = await mongodb.insertTask(task)
     if (taskSubmited){
         res.status(200).send()
@@ -50,11 +56,6 @@ app.post('/api/:username/Projects/:id/Tasks/:taskId', async(req, res) => {
     // task = await mongodb.findTask(req.params.taskId)
     // res.send(task)
   })
-  
-// app.get('/api/Tasks', async(req, res) => {
-//     tasks = await mongodb.Tasks()
-//     res.send(tasks)
-//   })
 
 app.post('/api/Auth',async(req, res) => {
     loginInfo = req.body
