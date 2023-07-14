@@ -26,6 +26,8 @@ export function Tasks() {
 
     for (var i = 0; i < tasks.length; i++){
         tasks[i]["clickEvent"] = (tasks) => handleTaskClick(tasks.TaskId)
+        
+        
         //console.log(projects[i])
     }
 
@@ -83,13 +85,11 @@ export function Tasks() {
     }
 
     return (
-        // <>
-        // <h1>{JSON.stringify(projects)}</h1>
-        // </> 
         <MDBDataTable
       striped
       bordered
       small
+      noBottomColumns={true}
       data={data}
     />
     )
