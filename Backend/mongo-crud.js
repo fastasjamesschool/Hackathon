@@ -9,20 +9,21 @@ async function test() {
     return {"name":"John"}
 }
 
-async function Projects() {
+async function Projects(username) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
-    const projects = await collection.find().toArray();
+    const projects = await collection.find({AssignedUsers: username}).toArray();
+    console.log({username})
     client.close();
     return projects;
 }
 
-async function findProject(projectId) {
+async function findProject(username, projectId) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
-    const project = await collection.find({ProjectId: Number(projectId)}).toArray();
+    const project = await collection.find({"$and":[{AssignedUsers: username}, {ProjectId: Number(projectId)}]}).toArray();
     client.close();
     return project;
 }
