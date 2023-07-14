@@ -14,7 +14,7 @@ async function Projects(username) {
     const db = client.db(dbName);
     const collection = db.collection(projectsCollection);
     const projects = await collection.find({AssignedUsers: username}).toArray();
-    console.log({username})
+    // console.log({username})
     client.close();
     return projects;
 }
@@ -56,18 +56,33 @@ async function userInDb(username) {
 }
 
 async function insertTask(task) {
+    // console.log(task.assignedUser)
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
     const collection = db.collection(tasksCollection);
-    const task = await collection.insertOne({TaskId: Number(task.taskId)},
-                                            {TaskName: task.taskName},
-                                            {Description: task.description},
-                                            {AssignedUser: task.assingedUser},
-                                            {ProjectId: Number(task.projectId)},
-                                            {'Due Date': task.dueDate},
-                                            {'Estimated Duration': Number(task.estimatedDuration)}).toArray();
+    const curHighestTask = await collection.find().sort({TaskId:-1}).limit(1).toArray();
+    const curHighestTaskId = curHighestTask[0].TaskId
+    console.log(curHighestTaskId)
+    const taskToInsert = {TaskId: curHighestTaskId + 1,
+        TaskName: task.taskName,
+        Description: task.description,
+        AssignedUser: [task.assignedUser],
+        ProjectId: Number(task.projectId),
+        'Due Date': task.dueDate,
+        'Estimated Duration': Number(task.estimatedDuration)}
+    const returnTask = await collection.insertOne(taskToInsert)
+    // console.log(taskToInsert)
     client.close();
-    return task;
+    return returnTask;
+}
+
+async function Tasks() {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(tasksCollection);
+    const tasks = await collection.find().toArray();
+    client.close();
+    return tasks;
 }
 
 async function Users() {
@@ -79,4 +94,4 @@ async function Users() {
     return users;
 }
 
-module.exports = {test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Users}
+module.exports = {test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Tasks, Users}
