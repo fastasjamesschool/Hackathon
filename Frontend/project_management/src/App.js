@@ -14,9 +14,9 @@ function App() {
         <Routes>
             <Route path="/" element={<Homepage/>} />
             <Route path="/:username" element={<Projects/>} />
-            <Route path="/Projects/:id" element={<Project/>} />
-            <Route path="/Projects/:id/Tasks" element={<Tasks/>} />
-            <Route path="/Projects/:id/Tasks/:taskId" element={<Task/>} />
+            <Route path="/:username/Projects/:id" element={<Project/>} />
+            <Route path="/:username/Projects/:id/Tasks" element={<Tasks/>} />
+            <Route path="/:username/Projects/:id/Tasks/:taskId" element={<Task/>} />
             
         </Routes>
         </>
