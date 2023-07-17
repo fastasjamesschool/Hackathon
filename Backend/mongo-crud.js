@@ -19,6 +19,17 @@ async function Projects(username) {
     return projects;
 }
 
+async function Role(username) {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(usersCollection);
+    const user = await collection.find({Username: username}).toArray();
+    const role = user[0]["Manager Role"]
+    //console.log({role})
+    client.close();
+    return role;
+}
+
 async function findProject(username, projectId) {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
@@ -94,4 +105,4 @@ async function Users() {
     return users;
 }
 
-module.exports = {test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Tasks, Users}
+module.exports = {test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Tasks, Role, Users}
