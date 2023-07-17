@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-export const UpdateTask = ({ updateTask , currentTask }) => {
+export const UpdateTask = ({ updateTask , task }) => {
   const [taskName, setTaskName] = useState("")
   const [description, setDescription] = useState("")
   const [assignedUser, setAssignedUser] = useState("")
   const [dueDate, setDueDate] = useState("")
   const [estimatedDuration, setEstimatedDuration] = useState("")
-  console.log(currentTask.projectId)
+  console.log(typeof(task))
   const styles = {
     section: {
       border: "2px solid var(--main-dark)",
@@ -21,8 +21,8 @@ export const UpdateTask = ({ updateTask , currentTask }) => {
   return (
     <section style={styles.section} id="addTaskSection">
         <div>
-        <body>Project ID: {currentTask.projectId}</body><br></br>
-        <body> Task ID: {currentTask.taskId}</body><br></br>
+        {/* <body>Project ID: {task[0].projectId}</body><br></br>
+        <body> Task ID: {task[0].taskId}</body><br></br> */}
         </div>
       <form>
         <div className="formField">
@@ -55,7 +55,7 @@ export const UpdateTask = ({ updateTask , currentTask }) => {
             onChange={e => setEstimatedDuration(e.target.value)} name="estimatedDuration" style={styles.input} />
         </div>
         <div className="formField">
-          <button onClick={event => updateTask(currentTask.projectId, currentTask.taskId, taskName, description,assignedUser,dueDate,estimatedDuration, event)} type="submit">Update task:</button>
+          <button onClick={event => updateTask(task[0].projectId, task[0].taskId, taskName, description,assignedUser,dueDate,estimatedDuration, event)} type="submit">Update task:</button>
         </div>
       </form>
     </section>

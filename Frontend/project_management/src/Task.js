@@ -5,7 +5,7 @@ import { Button } from 'bootstrap';
 import { UpdateTask } from './UpdateTask'
 
 export function Task() {
-    const [task, setTask] = useState([])
+    const [task, setTask] = useState({})
     let navigate = useNavigate();
     const location = useLocation();
     const role = location.state.role.role
@@ -14,8 +14,9 @@ export function Task() {
     async function fetchTask() {
         const response = await fetch(`/api/${params.username}/Projects/${params.id}/Tasks/${params.taskId}`);
         const responseJson = await response.json();
-        //console.log(responseJson)
+        console.log(responseJson)
         setTask(responseJson)
+        //console.log(task)
     }
 
     useEffect(() => {
@@ -23,7 +24,7 @@ export function Task() {
         
     }, [])
 
-    const currentTask = task[0]
+    //const currentTask = task[0]
     //console.log(currentTask)
     
     async function updateTask(projectId, taskId, taskName, description, assignedUser, dueDate, estimatedDuration, event) {
@@ -86,10 +87,10 @@ export function Task() {
         rows: task
     }
 
-    
+    //console.log(task)
     return (
         <>
-        {role && <UpdateTask updateTask = {updateTask} task = {currentTask} />}
+        {role && <UpdateTask updateTask = {updateTask} task = {task} />}
             <MDBDataTable
                 striped
                 bordered
