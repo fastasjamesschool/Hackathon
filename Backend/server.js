@@ -62,6 +62,19 @@ app.post('/api/:username/Projects/:id/Tasks/:taskId', async (req, res) => {
     // task = await mongodb.findTask(req.params.taskId)
     // res.send(task)
 })
+app.put('/api/:username/Projects/:id/Tasks/:taskId/Update', async (req, res) => {
+    task = req.body
+    // console.log(task)
+    taskUpdated = await mongodb.updateTask(task)
+    if (taskUpdated) {
+        res.status(200).send()
+    }
+    else {
+        res.status(404).send()
+    }
+    // task = await mongodb.findTask(req.params.taskId)
+    // res.send(task)
+})
 
 app.post('/api/Auth', async (req, res) => {
     loginInfo = req.body

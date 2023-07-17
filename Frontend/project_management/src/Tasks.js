@@ -5,19 +5,27 @@ import { CreateTask } from './CreateTask'
 
 export function Tasks() {
     const [tasks, setTasks] = useState([])
-    const [role, setRole] = useState("")
+    const [role, setRole] = useState()
     let navigate = useNavigate();
     let params = useParams();
+
     async function fetchTasks() {
         const response = await fetch(`/api/${params.username}/Projects/${params.id}/Tasks`);
         const responseJson = await response.json();
-        //console.log(responseJson)
         setTasks(responseJson)
+    }
+    
+    async function fetchRole(){
+        const response = await fetch(`/api/${params.username}/Role`)
+        const responseJson = await response.json();
+        //console.log(responseJson)
+        setRole(responseJson)
+        //console.log(role)     
     }
 
     useEffect(() => {
-        fetchTasks()
         fetchRole()
+        fetchTasks()
     }, [])
     // console.log({ project })
 
@@ -27,22 +35,13 @@ export function Tasks() {
     //     </> 
     // )
 
-    async function fetchRole(){
-        const response = await fetch(`/api/${params.username}/Role`)
-        const responseJson = await response.json();
-        setRole(responseJson)
-    }
-
     for (var i = 0; i < tasks.length; i++) {
         tasks[i]["clickEvent"] = (tasks) => handleTaskClick(tasks.TaskId)
-
-
-        //console.log(projects[i])
     }
 
     function handleTaskClick(taskId) {
         //console.log(projectId)
-        navigate(`/${params.username}/Projects/${params.id}/Tasks/${taskId}`)
+        navigate(`/${params.username}/Projects/${params.id}/Tasks/${taskId}`, {state:{role:{role}}})
     }
 
     const data = {
@@ -95,10 +94,7 @@ export function Tasks() {
 
     async function sendNewTask(projectId, taskId, taskName, description, assignedUser, dueDate, estimatedDuration, event) {
         event.preventDefault()
-        // console.log(taskId)
-        // Make API call to send data to server as a POST
         const newTask = { projectId, taskId, taskName, description, assignedUser, dueDate, estimatedDuration };
-        // console.log(JSON.stringify(newTask))
         const url = `/api/:username/Projects/:id/Tasks/:taskId`;
         const theNewTask = await fetch(url, {
             method: "POST", headers: {
@@ -106,9 +102,6 @@ export function Tasks() {
             }, body: JSON.stringify(newTask)
         })
 
-
-        // Put it in the list. Update the page to show our new todo.
-        // setTodos([...todos, theNewTask])
     }
 
     return (

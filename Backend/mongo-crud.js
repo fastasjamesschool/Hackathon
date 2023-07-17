@@ -87,6 +87,27 @@ async function insertTask(task) {
     return returnTask;
 }
 
+async function updateTask(task) {
+    // console.log(task.assignedUser)
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+    const collection = db.collection(tasksCollection);
+    //const curHighestTask = await collection.find().sort({TaskId:-1}).limit(1).toArray();
+    ///const curHighestTaskId = curHighestTask[0].TaskId
+    //console.log(curHighestTaskId)
+    const taskToUpdate = {TaskId: Number(task.taskId),
+        TaskName: task.taskName,
+        Description: task.description,
+        AssignedUser: [task.assignedUser],
+        ProjectId: Number(task.projectId),
+        'Due Date': task.dueDate,
+        'Estimated Duration': Number(task.estimatedDuration)}
+    const returnTask = await collection.replaceOne({TaskId:Number(task.taskId)}, taskToUpdate)
+    // console.log(taskToInsert)
+    client.close();
+    return returnTask;
+}
+
 async function Tasks() {
     const client = await MongoClient.connect(url);
     const db = client.db(dbName);
@@ -105,4 +126,4 @@ async function Users() {
     return users;
 }
 
-module.exports = {test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Tasks, Role, Users}
+module.exports = {updateTask, test, Projects,findProject, findTasksForProject,findTask, userInDb, insertTask, Tasks, Role, Users}
