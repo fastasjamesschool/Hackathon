@@ -5,6 +5,7 @@ import { CreateTask } from './CreateTask'
 
 export function Tasks() {
     const [tasks, setTasks] = useState([])
+    const [role, setRole] = useState("")
     let navigate = useNavigate();
     let params = useParams();
     async function fetchTasks() {
@@ -16,6 +17,7 @@ export function Tasks() {
 
     useEffect(() => {
         fetchTasks()
+        fetchRole()
     }, [])
     // console.log({ project })
 
@@ -24,6 +26,12 @@ export function Tasks() {
     //     {JSON.stringify(tasks)}
     //     </> 
     // )
+
+    async function fetchRole(){
+        const response = await fetch(`/api/${params.username}/Role`)
+        const responseJson = await response.json();
+        setRole(responseJson)
+    }
 
     for (var i = 0; i < tasks.length; i++) {
         tasks[i]["clickEvent"] = (tasks) => handleTaskClick(tasks.TaskId)
@@ -105,7 +113,7 @@ export function Tasks() {
 
     return (
         <>
-            <CreateTask sendNewTask={sendNewTask} projectId={params.id} taskId={params.TaskId} />
+            {role && <CreateTask sendNewTask={sendNewTask} projectId={params.id} taskId={params.TaskId}/>}
             <MDBDataTable
                 striped
                 bordered
